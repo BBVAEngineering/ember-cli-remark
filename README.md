@@ -1,50 +1,38 @@
-ember-cli-remark
-==============================================================================
+# ember-cli-remark
 
-[Short description of the addon.]
+[![Build Status](https://travis-ci.org/BBVAEngineering/ember-cli-remark.svg?branch=master)](https://travis-ci.org/BBVAEngineering/ember-cli-remark)
+[![GitHub version](https://badge.fury.io/gh/BBVAEngineering%2Fember-cli-remark.svg)](https://badge.fury.io/gh/BBVAEngineering%2Fember-cli-remark)
+[![npm version](https://badge.fury.io/js/ember-cli-remark.svg)](https://badge.fury.io/js/ember-cli-remark)
+[![Dependency Status](https://david-dm.org/BBVAEngineering/ember-cli-remark.svg)](https://david-dm.org/BBVAEngineering/ember-cli-remark)
 
-Installation
-------------------------------------------------------------------------------
+Wrapper for [remark-lint](https://github.com/remarkjs/remark-lint).
+
+## Information
+
+[![NPM](https://nodei.co/npm/ember-cli-remark.png?downloads=true&downloadRank=true)](https://nodei.co/npm/ember-cli-remark/)
+
+## Installation
 
 ```
 ember install ember-cli-remark
 ```
 
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
+## Usage
 
 
-Contributing
-------------------------------------------------------------------------------
 
-### Installation
+## Contribute
 
-* `git clone <repository-url>`
-* `cd ember-cli-remark`
-* `npm install`
+If you want to contribute to this addon, please read the [CONTRIBUTING.md](CONTRIBUTING.md).
 
-### Linting
+## Versioning
 
-* `npm run lint:js`
-* `npm run lint:js -- --fix`
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/BBVAEngineering/ember-cli-remark/tags).
 
-### Running tests
+## Authors
 
-* `ember test` – Runs the test suite on the current Ember version
-* `ember test --server` – Runs the test suite in "watch mode"
-* `npm test` – Runs `ember try:each` to test your addon against multiple Ember versions
+See the list of [contributors](https://github.com/BBVAEngineering/ember-cli-remark/graphs/contributors) who participated in this project.
 
-### Running the dummy application
+## License
 
-* `ember serve`
-* Visit the dummy application at [http://localhost:4200](http://localhost:4200).
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
