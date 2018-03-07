@@ -1,12 +1,18 @@
 {
   "name": "ember-cli-remark",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember wrapper for remark-lint.",
   "keywords": [
     "ember-addon",
     "lint",
     "remark",
-    "ember-cli"
+    "ember-cli",
+    "ember",
+    "markdown",
+    "md",
+    "validation",
+    "fences",
+    "codefences"
   ],
   "license": "MIT",
   "author": "BBVAEngineering",
@@ -29,6 +35,8 @@
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "broccoli-funnel": "^2.0.1",
+    "broccoli-lint-remark": "^1.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.0",
     "ember-cli-dependency-checker": "^2.0.0",
@@ -40,6 +48,7 @@
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
+    "ember-cli-version-checker": "^2.1.0",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",

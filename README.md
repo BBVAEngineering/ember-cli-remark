@@ -17,9 +17,35 @@ Ember wrapper for [remark-lint](https://github.com/remarkjs/remark-lint).
 ember install ember-cli-remark
 ```
 
+After installation, configure your rules using the `.remarkrc` 
+file as shown in [Remarks's configuration](https://github.com/remarkjs/remark/blob/master/doc/getting-started.md#using-remark-in-a-project).
+
+Furthermore, a `.remarkignore` file can be used to exclude files from linting while the linter is running.
+Its syntax is identical to `.gitignore` files.
+
 ## Usage
 
+[Remark](https://remark.js.org/) will be run by `ember-cli-qunit` or `ember-cli-mocha` automatically when you run ember test.
+If Remark is not being run automatically, try updating your `ember-cli` and/or `remark` dependencies.
 
+### Configuration
+
+`ember-cli-remark` can be configured through the `remark` key in your `ember-cli-build.js` file:
+
+```js
+const app = new EmberApp(defaults, {
+  remark: {
+    testGenerator: 'qunit',
+    quiet: true
+  }
+});
+```
+
+- `testGenerator` is automatically detected if `ember-qunit`/`ember-cli-qunit`
+  or `ember-mocha`/`ember-cli-mocha` are used, but can also be set to `qunit`
+  and `mocha` manually.
+
+- `quiet` can be set to `true` to prevent printing Remark logs.
 
 ## Contribute
 
