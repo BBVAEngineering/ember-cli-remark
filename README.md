@@ -5,7 +5,7 @@
 [![npm version](https://badge.fury.io/js/ember-cli-remark.svg)](https://badge.fury.io/js/ember-cli-remark)
 [![Dependency Status](https://david-dm.org/BBVAEngineering/ember-cli-remark.svg)](https://david-dm.org/BBVAEngineering/ember-cli-remark)
 
-Wrapper for [remark-lint](https://github.com/remarkjs/remark-lint).
+Ember wrapper for [remark-lint](https://github.com/remarkjs/remark-lint).
 
 ## Information
 
