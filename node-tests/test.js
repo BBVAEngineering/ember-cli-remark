@@ -16,6 +16,7 @@ describe('ember-cli-eslint', function() {
 		process.env.NO_GROUPING = true;
 
 		return emberTest().then((result) => {
+			console.log(result.stdout)
 			expect(result.error).to.not.exist;
 			expect(result.stdout.match(/[^\r\n]+/g))
 				.to.contain('ok 1 Chrome 64.0 - RemarkLint | CONTRIBUTING.md: should pass RemarkLint')
@@ -31,6 +32,7 @@ describe('ember-cli-eslint', function() {
 		fs.outputFileSync(FAILING_FILE, '# foo');
 
 		return emberTest({ NO_GROUPING: true }).then((result) => {
+			console.log(result.stdout)
 			expect(result.error).to.exist;
 			expect(result.stdout.match(/[^\r\n]+/g))
 				.to.contain('ok 1 Chrome 64.0 - RemarkLint | CONTRIBUTING.md: should pass RemarkLint')
