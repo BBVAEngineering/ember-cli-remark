@@ -11,7 +11,7 @@ sudo: false
 dist: trusty
 
 addons:
-  chrome: "stable"
+  chrome: stable
 
 cache:
   directories:
@@ -25,6 +25,10 @@ before_install:
 
 install:
   - npm install
+
+before_script:
+  - sudo chown root /opt/google/chrome/chrome-sandbox
+  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
 
 script:
   # Usually, it's ok to finish the test scenario without reverting
