@@ -9,6 +9,8 @@ module.exports = {
 		node: true
 	},
 	rules: {
-		'no-sync': 1
+		'no-sync': 0,
+		'no-process-env': 0,
+		'no-unused-expressions': 0
 	}
 };

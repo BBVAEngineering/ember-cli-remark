@@ -1,8 +1,10 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 const Funnel = require('broccoli-funnel');
 const Remark = require('broccoli-lint-remark');
+const mergeTrees = require('broccoli-merge-trees');
 const VersionChecker = require('ember-cli-version-checker');
 
 module.exports = {
@@ -30,22 +32,24 @@ module.exports = {
 			quiet: this._options.quiet || false,
 			testGenerator: this._options.testGenerator || this._testGenerator
 		};
+		const files = new Funnel('.', {
+			include: [`${type}/**/*`],
+			allowEmpty: true
+		});
+		const remarkTree = new Remark(files, options);
 
-		if (type === 'templates') {
-			// Instead of using this tree to lint templates, use it to lint root dir files
-			const readme = new Funnel('.', {
-				files: ['README.md']
+		if (type === 'tests') {
+			// Instead of using this tree only to lint tests, use it to lint root dir files
+			const rootMarkdowns = new Funnel('.', {
+				include: ['*.md']
 			});
 
-			return new Remark(readme, options);
+			return mergeTrees([
+				new Remark(rootMarkdowns, options),
+				remarkTree
+			]);
 		}
 
-		try {
-			const stats = fs.statSync(type);
-
-			if (stats.isDirectory()) {
-				return new Remark(type, options);
-			}
-		} catch(e) {}
+		return remarkTree;
 	}
 };
