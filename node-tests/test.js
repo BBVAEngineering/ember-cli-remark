@@ -17,11 +17,10 @@ describe('ember-cli-eslint', function() {
 
 		return emberTest().then((result) => {
 			expect(result.error).to.not.exist;
-			expect(result.stdout.match(/[^\r\n]+/g))
-				.to.contain('ok 1 Chrome 64.0 - RemarkLint | CONTRIBUTING.md: should pass RemarkLint')
-				.to.contain('ok 2 Chrome 64.0 - RemarkLint | LICENSE.md: should pass RemarkLint')
-				.to.contain('ok 3 Chrome 64.0 - RemarkLint | README.md: should pass RemarkLint')
-				.to.not.contain('not ok 8 Chrome 64.0 - RemarkLint | tests/dummy/app/unused.md: should pass RemarkLint');
+			expect(result.stdout).to.match(/^ok 1 Chrome \d+.0 - RemarkLint \| CONTRIBUTING.md: should pass RemarkLint/m);
+			expect(result.stdout).to.match(/^ok 2 Chrome \d+.0 - RemarkLint \| LICENSE.md: should pass RemarkLint/m);
+			expect(result.stdout).to.match(/^ok 3 Chrome \d+.0 - RemarkLint \| README.md: should pass RemarkLint/m);
+			expect(result.stdout).to.not.match(/^not ok 8 Chrome \d+.0 - RemarkLint \| tests\/dummy\/app\/unused.md: should pass RemarkLint/m);
 		});
 	});
 
@@ -32,11 +31,11 @@ describe('ember-cli-eslint', function() {
 
 		return emberTest({ NO_GROUPING: true }).then((result) => {
 			expect(result.error).to.exist;
-			expect(result.stdout.match(/[^\r\n]+/g))
-				.to.contain('ok 1 Chrome 64.0 - RemarkLint | CONTRIBUTING.md: should pass RemarkLint')
-				.to.contain('ok 2 Chrome 64.0 - RemarkLint | LICENSE.md: should pass RemarkLint')
-				.to.contain('ok 3 Chrome 64.0 - RemarkLint | README.md: should pass RemarkLint')
-				.to.contain('not ok 8 Chrome 64.0 - RemarkLint | tests/dummy/app/unused.md: should pass RemarkLint');
+			expect(result.stdout).to.match(/^ok 1 Chrome \d+.0 - RemarkLint \| CONTRIBUTING.md: should pass RemarkLint/m);
+			expect(result.stdout).to.match(/^ok 2 Chrome \d+.0 - RemarkLint \| LICENSE.md: should pass RemarkLint/m);
+			expect(result.stdout).to.match(/^ok 3 Chrome \d+.0 - RemarkLint \| README.md: should pass RemarkLint/m);
+			expect(result.stdout).to.match(/^not ok 8 Chrome \d+.0 - RemarkLint \| tests\/dummy\/app\/unused.md: should pass RemarkLint/m);
+
 		});
 	});
 });
