@@ -11,7 +11,7 @@ sudo: false
 dist: trusty
 
 addons:
-  chrome: 64
+  chrome: "stable"
 
 cache:
   directories:
