@@ -41,7 +41,7 @@ module.exports = {
 		if (type === 'tests') {
 			// Instead of using this tree only to lint tests, use it to lint root dir files
 			const rootMarkdowns = new Funnel('.', {
-				include: ['*.md']
+				include: ['*.*']
 			});
 
 			return mergeTrees([
