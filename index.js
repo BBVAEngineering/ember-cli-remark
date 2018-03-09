@@ -6,6 +6,7 @@ const Funnel = require('broccoli-funnel');
 const Remark = require('broccoli-lint-remark');
 const mergeTrees = require('broccoli-merge-trees');
 const VersionChecker = require('ember-cli-version-checker');
+const extensions = require('markdown-extensions');
 
 module.exports = {
 	name: 'ember-cli-remark',
@@ -22,7 +23,7 @@ module.exports = {
 		}
 	},
 
-	included: function (app) {
+	included(app) {
 		this._super.included.apply(this, arguments);
 		this._options = app.options.remark || {};
 	},
@@ -33,7 +34,7 @@ module.exports = {
 			testGenerator: this._options.testGenerator || this._testGenerator
 		};
 		const files = new Funnel('.', {
-			include: [`${type}/**/*`],
+			include: extensions.map((ext) => `${type}/**/*.${ext}`),
 			allowEmpty: true
 		});
 		const remarkTree = new Remark(files, options);
@@ -41,7 +42,7 @@ module.exports = {
 		if (type === 'tests') {
 			// Instead of using this tree only to lint tests, use it to lint root dir files
 			const rootMarkdowns = new Funnel('.', {
-				include: ['*.*']
+				include: extensions.map((ext) => `*.${ext}`)
 			});
 
 			return mergeTrees([
