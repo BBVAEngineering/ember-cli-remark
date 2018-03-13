@@ -45,7 +45,7 @@ const app = new EmberApp(defaults, {
   or `ember-mocha`/`ember-cli-mocha` are used, but can also be set to `qunit`
   and `mocha` manually.
 
-- `quiet` can be set to `true` to prevent printing Remark logs.
+- More options avaliable in [unified-engine](https://github.com/unifiedjs/unified-engine/blob/master/doc/configure.md) docs.
 
 ## Contribute
 
