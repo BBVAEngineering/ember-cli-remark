@@ -29,10 +29,10 @@ module.exports = {
 	},
 
 	lintTree(type) {
-		const options = {
-			quiet: this._options.quiet || false,
-			testGenerator: this._options.testGenerator || this._testGenerator
-		};
+		const options = Object.assign({
+			quiet: false,
+			testGenerator: this._testGenerator
+		}, this._options);
 		const files = new Funnel('.', {
 			include: extensions.map((ext) => `${type}/**/*.${ext}`),
 			allowEmpty: true
