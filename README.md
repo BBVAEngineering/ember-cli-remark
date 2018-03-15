@@ -30,13 +30,15 @@ If Remark is not being run automatically, try updating your `ember-cli` and/or `
 
 ### Configuration
 
-`ember-cli-remark` can be configured through the `remark` key in your `ember-cli-build.js` file:
+`ember-cli-remark` can be configured through the `ember-cli-remark` (and `remark` property) key in your `ember-cli-build.js` file:
 
 ```js
 const app = new EmberApp(defaults, {
-  remark: {
+  ember-cli-remark: {
     testGenerator: 'qunit',
-    quiet: true
+    remark: {
+      quiet: true
+    }
   }
 });
 ```
@@ -45,7 +47,7 @@ const app = new EmberApp(defaults, {
   or `ember-mocha`/`ember-cli-mocha` are used, but can also be set to `qunit`
   and `mocha` manually.
 
-- More options avaliable in [unified-engine](https://github.com/unifiedjs/unified-engine/blob/master/doc/configure.md) docs.
+- `remark`: Options avaliable in [unified-engine](https://github.com/unifiedjs/unified-engine/blob/master/doc/configure.md) docs.
 
 ## Contribute
 

@@ -22,7 +22,7 @@ module.exports = {
 
 	included(app) {
 		this._super.included.apply(this, arguments);
-		this._options = app.options.remark || {};
+		this._options = app.options['ember-cli-remark'] || {};
 	},
 
 	lintTree(type) {
@@ -31,7 +31,6 @@ module.exports = {
 		}
 
 		const options = Object.assign({
-			quiet: false,
 			testGenerator: this._testGenerator
 		}, this._options);
 		const files = new Funnel(type, {
