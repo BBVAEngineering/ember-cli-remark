@@ -18,10 +18,7 @@ describe('ember-cli-eslint', function() {
 		const result = await emberTest();
 
 		expect(result.error).to.not.exist;
-		expect(result.stdout).to.match(/^ok 1 Chrome \d+.0 - RemarkLint \| CONTRIBUTING.md: should pass RemarkLint/m);
-		expect(result.stdout).to.match(/^ok 2 Chrome \d+.0 - RemarkLint \| LICENSE.md: should pass RemarkLint/m);
-		expect(result.stdout).to.match(/^ok 3 Chrome \d+.0 - RemarkLint \| README.md: should pass RemarkLint/m);
-		expect(result.stdout).to.not.match(/^not ok 8 Chrome \d+.0 - RemarkLint \| tests\/dummy\/app\/unused.md: should pass RemarkLint/m);
+		expect(result.stdout).to.not.match(/^not ok 4 Chrome \d+.0 - RemarkLint \| dummy\/app\/unused.md: should pass RemarkLint/m);
 	});
 
 	it('fails if a RemarkLint tests fails', async function () {
@@ -32,10 +29,7 @@ describe('ember-cli-eslint', function() {
 		const result = await emberTest();
 
 		expect(result.error).to.exist;
-		expect(result.stdout).to.match(/^ok 1 Chrome \d+.0 - RemarkLint \| CONTRIBUTING.md: should pass RemarkLint/m);
-		expect(result.stdout).to.match(/^ok 2 Chrome \d+.0 - RemarkLint \| LICENSE.md: should pass RemarkLint/m);
-		expect(result.stdout).to.match(/^ok 3 Chrome \d+.0 - RemarkLint \| README.md: should pass RemarkLint/m);
-		expect(result.stdout).to.match(/^not ok 8 Chrome \d+.0 - RemarkLint \| tests\/dummy\/app\/unused.md: should pass RemarkLint/m);
+		expect(result.stdout).to.match(/^not ok 4 Chrome \d+.0 - RemarkLint \| dummy\/app\/unused.md: should pass RemarkLint/m);
 	});
 });
 
