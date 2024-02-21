@@ -1,3 +1,5 @@
+# DEPRECATED
+
 # ember-cli-remark
 
 [![Build Status](https://travis-ci.org/BBVAEngineering/ember-cli-remark.svg?branch=master)](https://travis-ci.org/BBVAEngineering/ember-cli-remark)
